@@ -25,7 +25,7 @@ Visa card numbers start with a 4
 Credit cards for Visa feature 16 digits
 e.g: 4012888888881881
 
-
+still in progress
 '''
 from cs50 import get_string
 
