@@ -1,0 +1,11 @@
+sort1 uses: BUBBLE SORT
+
+How do you know?: It has the fastest running time to sort an already sorted text file compared to sort 3, as bubble sort tends to outperform if the list is already sorted
+
+sort2 uses: MERGE SORT
+
+How do you know?: It has the fastest running time for sorting compared to sort 1 and 3
+
+sort3 uses: SELECTION SORT
+
+How do you know?: It had a slower running time to sort an already sorted text file compared to sort 1 as selection sort is required to check for the smallest number first throughout the whole text file before sorting

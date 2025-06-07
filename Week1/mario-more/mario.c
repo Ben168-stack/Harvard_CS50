@@ -1,5 +1,5 @@
 #include <stdio.h>
-'''
+/*
 A program that recreates a half-pyramid using hashes (#) for blocks,
 
 E.g
@@ -15,7 +15,7 @@ If the user fails to provide a positive integer no greater than 8, you should re
 Then, generate (with the help of print and one or more loops) the desired half-pyramid.
 Take care to align the bottom-left corner of your half-pyramid with the left-hand edge of your terminal window.
 
-'''
+*/
 #include <stdio.h>
 
 int get_int(const char *prompt)
