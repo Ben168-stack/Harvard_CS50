@@ -1,0 +1,3 @@
+10 HTML tags and 5 CSS properties used
+
+How Boostrap 5 and Javascript was used:
