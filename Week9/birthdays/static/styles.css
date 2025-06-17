@@ -55,6 +55,13 @@ button, input[type="submit"] {
     vertical-align: middle;
 }
 
+button:hover,
+input[type="submit"]:hover {
+    background-color: #b9dcff;
+    border-color: #7cc1ff;
+    cursor: pointer;
+}
+
 input[type="text"], input[type="number"] {
     line-height: 1.8;
     width: 25%;

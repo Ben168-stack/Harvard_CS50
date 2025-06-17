@@ -5,3 +5,7 @@
     backDelay: 3000,
     loop: true
   });
+
+  // Footer Animation
+
+  
