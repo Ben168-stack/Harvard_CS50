@@ -1,0 +1,76 @@
+Answers Explanation
+
+ 1.sql, write a SQL query to list the names of all songs  the database.
+Your query should output a table with a sgle column for the name of each song.
+
+SELECT NAME from songs;
+
+First question is straight forward stating the header Name using Select will get the name for each song in the songs table
+
+ 2.sql, write a SQL query to list the names of all songs  creasg order of tempo.
+Your query should output a table with a sgle column for the name of each song.
+
+SELECT NAME from songs ORDER BY tempo;
+
+The ORDER BY tag will list the names of the songs in increasing order based on the tempo
+
+
+ 3.sql, write a SQL query to list the names of the top 5 longest songs,  descendg order of length.
+Your query should output a table with a sgle column for the name of each song.
+
+SELECT name FROM songs ORDER BY duration_ms DESC LIMIT 5;
+
+The ORDER BY tag duration will select the top 5 longest songs, the DESC tag will list it in descending order.
+The LIMIT tag will limit it to just 5 queries
+
+ 4.sql, write a SQL query that lists the names of any songs that have danceability, energy, and valence greater than 0.75.
+Your query should output a table with a sgle column for the name of each song.
+
+SELECT NAME from songs WHERE danceability > 0.75 AND energy > 0.75 AND valence > 0.75;
+
+Simply do a simple select statement and use the WHERE tag to check if each header is greater than 0.75
+
+ 5.sql, write a SQL query that returns the average energy of all the songs.
+Your query should output a table with a sgle column and a sgle row contag the average energy.
+
+SELECT AVG(energy) FROM songs;
+
+Simply use a select statement followed by the AVG() tag to get the average energy for the songs table
+
+ 6.sql, write a SQL query that lists the names of songs that are by Post Malone.
+Your query should output a table with a sgle column for the name of each song.
+You should not make any assumptions about what Post Malone’s artist_id is.
+
+SELECT songs.name
+FROM songs
+JOIN artists ON songs.artist_id = artists.id
+WHERE artists.name = 'Post Malone';
+
+
+A JOIN tag is used on the artist_id as they are the key pair header for the song table and artist table.
+By joining the two tables we can filter the songs by artist name in this case songs by artist 'Post Malone'.
+
+
+
+ 7.sql, write a SQL query that returns the average energy of songs that are by Drake.
+Your query should output a table with a sgle column and a sgle row contag the average energy.
+You should not make any assumptions about what Drake’s artist_id is.
+
+SELECT AVG(songs.energy)
+FROM songs
+JOIN artists ON songs.artist_id = artists.id
+WHERE artists.name = 'Drake';
+
+Similar solution to question 6 still joining both tables of songs and artists with common key pair of id and using AVG() to get the average
+energy of songs by Drake
+
+ 8.sql, write a SQL query that lists the names of the songs that feature other artists.
+Songs that feature other artists will clude “feat.”  the name of the song.
+Your query should output a table with a sgle column for the name of each song.
+
+SELECT name
+FROM songs
+WHERE name LIKE '%feat.%';
+
+
+The Like Statement will filter names that are similar to '%feat.%'. The "%' tags basically means any text before and after the substring "feat.".
