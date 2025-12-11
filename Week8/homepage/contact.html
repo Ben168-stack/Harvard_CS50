@@ -28,15 +28,17 @@
     <div class="bx bx-menu" id="menu-icon"></div>
 
     <nav class="navbar">
-      <a href="/Week8/homepage/home.html">Home</a>
+      <a href="/Week8/homepage/index.html">Home</a>
       <a href="/Week8/homepage/aboutme.html">About</a>
       <a href="/Week8/homepage/projects.html">Projects</a>
       <a href="/Week8/homepage/contact.html" class="active">Contact</a>
+
+      <span class="active-nav"></span>
     </nav>
   </header>
 
   <section class="contact" id="contact">
-    <h2 class="heading">Contact <span></span></h2>
+    <h2 class="heading">Contact <span>Me!</span></h2>
 
     <form action="#">
         <div class="input-box">
@@ -45,21 +47,32 @@
                 <span class="focus"></span>
             </div>
             <div class="input-field">
-                <input type="text" placeholder="Email" required>
+                <input type="text" placeholder="Email Address" required>
                 <span class="focus"></span>
             </div>
         </div>
 
         <div class="input-box">
             <div class="input-field">
-                <input type="text" placeholder="Email Subject" required>
+                <input type="number" placeholder="Mobile Number" required>
                 <span class="focus"></span>
             </div>
             <div class="input-field">
-                <textarea name="email-message" id="email_message"></textarea>
+                <input type="text" placeholder="Email Subject" required>
                 <span class="focus"></span>
             </div>
         </div>
+
+        <div class="textarea-field">
+          <textarea name="email-message" id="email_message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+          <span class="focus"></span>
+        </div>
+
+        <div class="btn-box btns">
+          <button class="btn">Submit</button>
+        </div>
+
+       
     </form>
   </section>
 
