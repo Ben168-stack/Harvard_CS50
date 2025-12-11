@@ -7,3 +7,8 @@ Invoke-WebRequest -Uri "https://cdn.cs50.net/2024/fall/psets/8/trivia.zip" -OutF
 
 Include Invoke WebRequest to save file to current directory
 
+Recompilling C programs example
+
+gcc -std=c11 filter.c helpers.c -o filter
+
+gcc filter.c helpers.c -o filter
