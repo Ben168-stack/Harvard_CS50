@@ -111,8 +111,62 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    # Get Form Data
+    username = request.form.get("username")
+    email = request.form.get("email")
+    password = request.form.get("password")
+    confirm_password = request.form.get("confirm-password")
+
     """Register user"""
-    return apology("TODO")
+    
+    # Forget any user_id
+    session.clear()
+
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+        if not username:
+            return apology("must provide username", 403)
+        
+        elif not email:
+            return apology("must provide email", 403)
+
+        # Ensure password was submitted
+        elif not password:
+            return apology("must provide password", 403)
+        
+        elif not confirm_password:
+            return apology("must confirm password", 403)
+        
+        elif confirm_password != password:
+            return apology("Both Passwords must be the same", 403)
+        
+        else:
+            # Query database for username
+            check_username = db.execute(
+            "SELECT * FROM users WHERE username = ?", username
+            )
+
+            check_email = db.execute(
+            "SELECT * FROM users WHERE email = ?", email
+            )
+
+            if len(check_username) > 0:
+                return apology("Username Already Exists", 403)
+            elif len(check_email) > 0:
+                return apology("Email Already Exists", 403)
+            
+            else:
+                hash_password = generate_password_hash(confirm_password)
+
+                db.execute(
+                    "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
+                    username,
+                    email,
+                    hash_password  # password should be hashed!
+                )
+
+
+    return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
